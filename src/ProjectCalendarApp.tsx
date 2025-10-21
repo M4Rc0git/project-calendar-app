@@ -553,10 +553,9 @@ export default function ProjectCalendarApp() {
                       <SelectContent>
                         {projects.map((p) => (
                           <SelectItem value={p.id} key={p.id} label={p.name} dotColor={p.color}>
-                            <div className="flex items-center gap-2">
-                              <span className="h-3 w-3 rounded-full" style={{ backgroundColor: p.color }} />
+                            
                               {p.name}
-                            </div>
+                          
                           </SelectItem>
                         ))}
                       </SelectContent>
