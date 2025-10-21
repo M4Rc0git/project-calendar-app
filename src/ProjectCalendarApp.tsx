@@ -1,4 +1,3 @@
-
 /**
  * 🧭 HOW TO UPLOAD YOUR APP TO GITHUB & DEPLOY ON VERCEL (FOR BEGINNERS)
  * (Kept as a comment so it does NOT render in the app and cannot cause React errors.)
@@ -448,13 +447,10 @@ export default function ProjectCalendarApp() {
                   <SelectValue placeholder="Filter by project" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All projects</SelectItem>
+                  <SelectItem value="all" label="All projects">All projects</SelectItem>
                   {projects.map((p) => (
-                    <SelectItem key={p.id} value={p.id}>
-                      <div className="flex items-center gap-2">
-                        <span className="h-3 w-3 rounded-full" style={{ backgroundColor: p.color }} />
-                        {p.name}
-                      </div>
+                    <SelectItem key={p.id} value={p.id} label={p.name} dotColor={p.color}>
+                      {p.name}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -553,9 +549,7 @@ export default function ProjectCalendarApp() {
                       <SelectContent>
                         {projects.map((p) => (
                           <SelectItem value={p.id} key={p.id} label={p.name} dotColor={p.color}>
-                            
-                              {p.name}
-                          
+                            {p.name}
                           </SelectItem>
                         ))}
                       </SelectContent>
@@ -789,11 +783,8 @@ export default function ProjectCalendarApp() {
                 </SelectTrigger>
                 <SelectContent>
                   {projects.map((p) => (
-                    <SelectItem value={p.id} key={p.id}>
-                      <div className="flex items-center gap-2">
-                        <span className="h-3 w-3 rounded-full" style={{ backgroundColor: p.color }} />
-                        {p.name}
-                      </div>
+                    <SelectItem value={p.id} key={p.id} label={p.name} dotColor={p.color}>
+                      {p.name}
                     </SelectItem>
                   ))}
                 </SelectContent>
